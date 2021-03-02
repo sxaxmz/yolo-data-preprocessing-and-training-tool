@@ -8,7 +8,9 @@ YOLO v3 makes prediction at three scales (The arrange anchors is descending orde
 In YOLOv3 the detection is done by applying (1 x 1) detection kernels on feature maps of three different sizes at three different places in the network. The detection kernel is 1 x 1 x (B x (5 + C) )
 
 `B is the number of bounding boxes.`
+
 `“5” is for the 4 bounding box attributes and one object confidence.`
+
 `C is the number of classes.`
 
 The first detection is made by the 82nd layer. prior to this layer the image down sampled by network for all previous layers. The feature map from layer 79 is subjected to a few convolutional layers before being up sampled by 2x to dimensions (2 x dimensions). Then the combined feature maps is again subjected a few (1 x 1) convolutional layers to fuse the features from the earlier layer (61). This feature map is then depth concatenated with the feature map from layer 61. Then, the second detection is made by the 94th layer, yielding a detection feature map of (2 x dimensions).
@@ -70,7 +72,7 @@ print("Test Set {}: \n".format(len(test_img_list)), test_img_list)
 ##### Weights
 The weights can be saved either on the cloud or in darknet backup folder (Weights are automatically saved upon the completion of 100 iterations).
 
-![Weights saved on Google drive](images/weights_google_drive.png)  ![Weights saved on darknet backup folder](images/weights_backup_darknet.png)
+![Weights saved on Google drive](images/weights_google_drive.png)  ![Weights saved on darknet backup folder](images/weight_backup_darknet.png)
 
 
 
