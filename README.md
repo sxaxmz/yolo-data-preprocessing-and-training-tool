@@ -25,6 +25,35 @@ Having 3 layers of detection helps with detecting objects of different sizes. Th
 ### Yolov3 Tools Repository 
 This repository contains a set of tools gathered and modified persionally to fit the need of preprocessing and training computer vision datasets when preparing Yolov3 model.
 
+##### Converting PASCAL to Yolo
+Pseudo code for conversion (numbers are based on this [example](http://host.robots.ox.ac.uk/pascal/VOC/images/uiuc2a.html))
+
+```sh
+img_w = 174
+img_h = 83
+
+
+xmin = 39
+ymin = 39
+
+xmax = 138
+ymax = 79 
+
+# Calculate Percentage
+x = (xmin * 100) / img_w # 22.41
+y = (ymin * 100) / img_h # 46.98
+
+w = (xmax * 100) / img_w # 79.31
+h = (ymax * 100) / img_h # 95.18
+
+# Percentage from image
+x = x / 100 # 0.2241
+y = y / 100 # 0.4698
+
+w = w / 100 # 0.7931
+h = h / 100 # 0.9518
+```
+
 ##### TXT Parses
 Convert PASCAL Annotation Version 1.00 text file to the text format needed for yolov3.
 
@@ -43,6 +72,12 @@ is_subfolder = True # if the data is in a sub-folder in the specified folder (da
 The repo contains an xml parser that extracts the xml tags of the image from the xml file and stores it in Yolov3 '.txt' format to fit the training.
 
 ![Yolov3 text file Format](images/yolov3_txt_format.png)
+
+`Object-class is a number value representing the class`
+`x-center located at % of the width`
+`y-center located at % of the height`
+`width is the width of the bounding box`
+`height is the height of the bounding box`
 
 After preparing the images/dataset to be trained, it shall be uploaded to google drive as zipped file. The zipped file shall contain both the imags and the text files having the same names.
 
@@ -88,3 +123,4 @@ The weights can be saved either on the cloud or in darknet backup folder (Weight
 5. https://storage.googleapis.com/openimages/web/index.html
 6. https://pjreddie.com/darknet/yolo/
 7. https://www.cis.upenn.edu/~jshi/ped_html/
+8. https://www.visiongeek.io/2019/10/preparing-custom-dataset-for-training-yolo-object-detector.html

@@ -35,9 +35,19 @@ def ParseTXT(img_folder, file):
                 lines = txt_file_pascal.readlines()
                 txt_content = ''
                 object_name = ''
+                img_height = ''
+                img_width = ''
                 xywh = ''
                 obj_index = ''
                 for i, line in enumerate(lines):
+                    # Image size (X x Y x C) : 396 x 397 x 3
+                    if 'Image size' in line:
+                        size_line = line.split(":")[1]
+                        numbers = re.findall("[0-9.]+", line)
+                        w_h = [i for i in numbers[:-1]]
+                        img_width = w_h[0]
+                        img_height = w_h[1]
+
                     #Original label for object N "class_name" : "class_name"
                     if 'Original label for object' in line:
                         label_ = line.split(":")[0]
@@ -60,10 +70,10 @@ def ParseTXT(img_folder, file):
                         x2 = xyxy1[1].split(", ")[0]
                         y2 = xyxy1[1].split(", ")[1]
 
-                        x = x1
-                        y = y1
-                        w = x2
-                        h = y2
+                        x = ((int(x1) * 100) / int(img_width)) / 100
+                        y = ((int(y1) * 100) / int(img_height)) / 100
+                        w = ((int(x2) * 100) / int(img_width)) / 100
+                        h = ((int(y2) * 100) / int(img_height)) / 100
 
                         xywh = (str(x)+' '+str(y)+' '+str(w)+' '+str(h))
 
