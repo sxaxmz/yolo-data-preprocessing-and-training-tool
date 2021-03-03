@@ -82,3 +82,4 @@ The weights can be saved either on the cloud or in darknet backup folder (Weight
 3. https://medium.com/analytics-vidhya/train-yolo-v3-to-detect-custom-objects-car-license-plate-428ffa4d7aa6
 4. https://pysource.com/2020/04/02/train-yolo-to-detect-a-custom-object-online-with-free-gpu/
 5. https://storage.googleapis.com/openimages/web/index.html
+6. https://pjreddie.com/darknet/yolo/
