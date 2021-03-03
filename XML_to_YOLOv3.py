@@ -2,9 +2,6 @@ import xml.etree.ElementTree as element_tree
 import os
 import glob
 
-foldername = os.path.basename(os.getcwd())
-if foldername == "tools": os.chdir("..")
-
 data_dir = '/data/licenses-plate'
 Detection_label_path = 'data/licenses-plate/classes.txt'
 Dataset_train = "data/licenses-plate/train.txt"

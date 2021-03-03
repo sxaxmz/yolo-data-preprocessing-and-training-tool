@@ -25,8 +25,11 @@ Having 3 layers of detection helps with detecting objects of different sizes. Th
 ### Yolov3 Tools Repository 
 This repository contains a set of tools gathered and modified persionally to fit the need of preprocessing and training computer vision datasets when preparing Yolov3 model.
 
+##### TXT Parses
+Convert PASCAL Annotation Version 1.00 text file to the text format needed for yolov3.
+
 ##### XML Parser
-Modify the below accordignly by specifying the flder name of the images/dataset and the directory of the output text files containing the list of classes and the list of images in each train and test set accordingly.
+Modify the below accordignly by specifying the folder name of the images/dataset and the directory of the output text files containing the list of classes and the list of images in each train and test set accordingly.
 
 ```sh
 data_dir = 'Custom-Dataset-or-Images-Folder-Name'
@@ -39,7 +42,7 @@ is_subfolder = True # if the data is in a sub-folder in the specified folder (da
 ##### Image Format
 The repo contains an xml parser that extracts the xml tags of the image from the xml file and stores it in Yolov3 '.txt' format to fit the training.
 
-![Yolov3 test file Format](images/yolov3_txt_format.png)
+![Yolov3 text file Format](images/yolov3_txt_format.png)
 
 After preparing the images/dataset to be trained, it shall be uploaded to google drive as zipped file. The zipped file shall contain both the imags and the text files having the same names.
 
