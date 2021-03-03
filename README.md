@@ -51,6 +51,7 @@ After preparing the images/dataset to be trained, it shall be uploaded to google
 ##### Yolo Configuration File
 
 max_batches = (number of classes) * 2000
+Steps = (max_batches * 0.8), (max_batches * 0.9)
 filters = (classes + 5) x 3
 
 ##### Train & Test Split
@@ -86,3 +87,4 @@ The weights can be saved either on the cloud or in darknet backup folder (Weight
 4. https://pysource.com/2020/04/02/train-yolo-to-detect-a-custom-object-online-with-free-gpu/
 5. https://storage.googleapis.com/openimages/web/index.html
 6. https://pjreddie.com/darknet/yolo/
+7. https://www.cis.upenn.edu/~jshi/ped_html/
