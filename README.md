@@ -45,7 +45,7 @@ y = (ymin * 100) / img_h # 46.98
 w = (xmax * 100) / img_w # 79.31
 h = (ymax * 100) / img_h # 95.18
 
-# Percentage from image
+# Convert to value between (0.0-1.0)
 x = x / 100 # 0.2241
 y = y / 100 # 0.4698
 
@@ -57,6 +57,8 @@ h = h / 100 # 0.9518
 Convert PASCAL Annotation Version 1.00 text file to the text format needed for yolov3.
 
 ##### XML Parser
+Convert PASCAL VOC file to the text format needed for yolov3.
+
 Modify the below accordignly by specifying the folder name of the images/dataset and the directory of the output text files containing the list of classes and the list of images in each train and test set accordingly.
 
 ```sh
