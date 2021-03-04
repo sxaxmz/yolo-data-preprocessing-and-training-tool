@@ -3,7 +3,10 @@ import numpy as np
 import glob
 import re
     
+'''
+# Traditional yolov3 detection
 def detect_rectangles(detection, img):
+    print(detection[0], detection[1], detection[2], detection[3])
     img = cv2.imread(img)
     height, width, channels = img.shape
     obj_x_center = int(detection[0] * width)
@@ -12,7 +15,19 @@ def detect_rectangles(detection, img):
     h = int(detection[3] * height)
     x = int(obj_x_center - w / 2) # Top Left
     y = int(obj_y_center -  h / 2) # Top Left
+    print(x, y, w, h)
     return [x, y, w, h]
+'''
+
+# Modified based on pascal to yolo conversion
+def detect_rectangles(detection, img):
+    img = cv2.imread(img)
+    height, width, channels = img.shape
+    x = int(detection[0] * width)
+    y = int(detection[1] * height)
+    w = int(detection[2] * width)
+    h = int(detection[3] * height)
+    return [x, y, w, h]  
 
 white_color = (255, 255, 255)
 black_color = (0, 0, 0)
