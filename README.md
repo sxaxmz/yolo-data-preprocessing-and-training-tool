@@ -32,7 +32,6 @@ Pseudo code for conversion (numbers are based on this [example](http://host.robo
 img_w = 174
 img_h = 83
 
-
 xmin = 39
 ymin = 39
 
@@ -73,15 +72,15 @@ The repo contains an xml parser that extracts the xml tags of the image from the
 
 ![Yolov3 text file Format](images/yolov3_txt_format.png)
 
-`Object-class is a number value representing the class`
+`Object-class (Value 0 to Classes-1) is a number value representing the class`
 
-`x-center located at % of the width`
+`x-center (Value 0.0 to 1.0) located at % of the width`
 
-`y-center located at % of the height`
+`y-center (Value 0.0 to 1.0) located at % of the height`
 
-`width is the width of the bounding box`
+`width (Value 0.0 to 1.0) is the width of the bounding box`
 
-`height is the height of the bounding box`
+`height (Value 0.0 to 1.0) is the height of the bounding box`
 
 After preparing the images/dataset to be trained, it shall be uploaded to google drive as zipped file. The zipped file shall contain both the imags and the text files having the same names.
 
