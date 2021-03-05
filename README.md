@@ -143,3 +143,4 @@ The weights can be saved either on the cloud or in darknet backup folder (Weight
 6. https://pjreddie.com/darknet/yolo/
 7. https://www.cis.upenn.edu/~jshi/ped_html/
 8. https://www.visiongeek.io/2019/10/preparing-custom-dataset-for-training-yolo-object-detector.html
+9. https://bitbucket.org/ElencheZetetique/rtod/src/master/
