@@ -38,23 +38,37 @@ ymin = 39
 xmax = 138
 ymax = 79 
 
-# Calculate Percentage
+# Calculate Size Percentage From Image 1
 x = (xmin * 100) / img_w # 22.41
 y = (ymin * 100) / img_h # 46.98
-
 w = (xmax * 100) / img_w # 79.31
 h = (ymax * 100) / img_h # 95.18
 
 # Convert to value between (0.0-1.0)
 x = x / 100 # 0.2241
 y = y / 100 # 0.4698
-
 w = w / 100 # 0.7931
 h = h / 100 # 0.9518
+
+# Yolov3 draw rectangle detection 
+obj_x_center = int(detection[0] * width)
+obj_y_center = int(detection[1] * height)
+w = int(detection[2] * width)
+h = int(detection[3] * height)
+x = int(obj_x_center - w / 2)
+y = int(obj_y_center -  h / 2) 
+
+# Conversion Calculation
+x = ((x2-x1)/2+x1)/img_width
+y = ((y2-y1)/2+y1)/img_height
+w = (x2-x1)/ img_width
+h = (y2-y1)/img_height
 ```
 
 ##### TXT Parses
 Convert PASCAL Annotation Version 1.00 text file to the text format needed for yolov3.
+
+![Pascal Annotation Version 1 Conversion to Yolo](images/pascal_annotation_version1_to_yolo.png)
 
 ##### XML Parser
 Convert PASCAL VOC file to the text format needed for yolov3.

@@ -65,15 +65,15 @@ def ParseTXT(img_folder, file):
                     if 'Bounding box for object' in line:
                         xyxy = line.split(":")[1]
                         xyxy1 = re.findall(regex, xyxy)
-                        x1 = xyxy1[0].split(", ")[0]
-                        y1 = xyxy1[0].split(", ")[1]
-                        x2 = xyxy1[1].split(", ")[0]
-                        y2 = xyxy1[1].split(", ")[1]
+                        x1 = float(xyxy1[0].split(", ")[0])
+                        y1 = float(xyxy1[0].split(", ")[1])
+                        x2 = float(xyxy1[1].split(", ")[0])
+                        y2 = float(xyxy1[1].split(", ")[1])
 
-                        x = ((int(x1) * 100) / int(img_width)) / 100
-                        y = ((int(y1) * 100) / int(img_height)) / 100
-                        w = ((int(x2) * 100) / int(img_width)) / 100
-                        h = ((int(y2) * 100) / int(img_height)) / 100
+                        x = ((x2-x1)/2+x1)/img_width
+                        y = ((y2-y1)/2+y1)/img_height
+                        w = (x2-x1)/ img_width
+                        h = (y2-y1)/img_height
 
                         xywh = (str(x)+' '+str(y)+' '+str(w)+' '+str(h))
 
