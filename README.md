@@ -66,7 +66,7 @@ h = (y2-y1)/img_height
 ```
 
 ##### TXT Parses
-Convert PASCAL Annotation Version 1.00 text file to the text format needed for yolov3.
+Convert PASCAL Annotation Version 1.00 text file to the text format needed for yolov3. (Dataset Referenced)
 
 ![Pascal Annotation Version 1 Conversion to Yolo](images/pascal_annotation_version1_to_yolo.png)
 
