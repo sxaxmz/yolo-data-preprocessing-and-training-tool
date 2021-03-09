@@ -135,6 +135,9 @@ The weights can be saved either on the cloud or in darknet backup folder (Weight
 ![Weights saved on Google drive](images/weights_google_drive.png)  ![Weights saved on darknet backup folder](images/weight_backup_darknet.png)
 
 
+### Usage:
+When using/modifying the content or the code of and/or which was introduced thoguht this repository always do give appropriate credit and ask for permission when needed.
+
 
 ### Refrences
 1. https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b
