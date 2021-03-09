@@ -139,7 +139,7 @@ The weights can be saved either on the cloud or in darknet backup folder (Weight
 When using/modifying the content or the code of and/or which was introduced thoguht this repository always do give appropriate credit and ask for permission when needed.
 
 
-### Refrences
+### References
 1. https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b
 2. https://thebinarynotes.com/how-to-train-yolov3-custom-dataset/
 3. https://medium.com/analytics-vidhya/train-yolo-v3-to-detect-custom-objects-car-license-plate-428ffa4d7aa6
