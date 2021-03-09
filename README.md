@@ -51,18 +51,18 @@ w = w / 100 # 0.7931
 h = h / 100 # 0.9518
 
 # Yolov3 draw rectangle detection 
-obj_x_center = int(detection[0] * width)
-obj_y_center = int(detection[1] * height)
-w = int(detection[2] * width)
-h = int(detection[3] * height)
+obj_x_center = int(detection[0] * img_w)
+obj_y_center = int(detection[1] * img_h)
+w = int(detection[2] * img_w)
+h = int(detection[3] * img_h)
 x = int(obj_x_center - w / 2)
 y = int(obj_y_center -  h / 2) 
 
 # Conversion Calculation
-x = ((x2-x1)/2+x1)/img_width
-y = ((y2-y1)/2+y1)/img_height
-w = (x2-x1)/ img_width
-h = (y2-y1)/img_height
+x = ( (xmax - xmin) / 2 + xmin) / img_w
+y = ( (ymax - ymin) / 2 + ymin) / img_h
+w = (xmax-xmin) / img_w
+h = (ymax-ymin) / img_h
 ```
 
 ##### TXT Parses
