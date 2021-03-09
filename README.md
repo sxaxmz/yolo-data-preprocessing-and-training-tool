@@ -75,6 +75,8 @@ Convert PASCAL VOC file to the text format needed for yolov3.
 
 Modify the below accordignly by specifying the folder name of the images/dataset and the directory of the output text files containing the list of classes and the list of images in each train and test set accordingly.
 
+![Pascal VOC to Yolo](images/xml_to_yolo.png)
+
 ```sh
 data_dir = 'Custom-Dataset-or-Images-Folder-Name'
 Detection_label_path = 'Custom-Dataset-or-Images-Folder-Name/classes.txt'

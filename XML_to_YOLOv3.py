@@ -24,6 +24,9 @@ def ParseXML(img_folder, file):
         tree = element_tree.parse(open(xml_file))
         root = tree.getroot()
         image_file_name = root.find('filename').text 
+        xmlsize = root.find('size')
+        img_width = int(xmlsize.find('width').text)
+        img_height = int(xmlsize.find('height').text)
         image_name, image_extension = os.path.splitext(image_file_name)
         img_path = img_folder+'/'+image_file_name
         txt_file_name = txt_folder_path+'/'+image_name+'.txt'
@@ -36,11 +39,17 @@ def ParseXML(img_folder, file):
                 detection_label.append(object_name)
             txt_content = object_name   
             object_id = detection_label.index(object_name)
-            xmlbox = obj.find('bndbox')
-            xyxy = (str(int(float(xmlbox.find('xmin').text)))+' '
-                    +str(int(float(xmlbox.find('ymin').text)))+' '
-                    +str(int(float(xmlbox.find('xmax').text)))+' '
-                    +str(int(float(xmlbox.find('ymax').text)))+' ')
+            xmlbox = obj.find('bndbox') 
+            x1 = int(float(xmlbox.find('xmin').text))
+            y1 = int(float(xmlbox.find('ymin').text))
+            x2 = int(float(xmlbox.find('xmax').text))
+            y2 = int(float(xmlbox.find('ymax').text))
+            x = ((x2-x1)/2+x1)/img_width
+            y = ((y2-y1)/2+y1)/img_height
+            w = (x2-x1)/ img_width
+            h = (y2-y1)/img_height
+            xyxy = (str(x)+' '+str(y)+' '+str(w)+' '+str(h)+' ')
+
             img_path += ' '+ xyxy
             txt_content += ' '+ xyxy
 
