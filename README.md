@@ -106,9 +106,12 @@ After preparing the images/dataset to be trained, it shall be uploaded to google
 
 ##### Yolo Configuration File
 
-max_batches = (number of classes) * 2000
-Steps = (max_batches * 0.8), (max_batches * 0.9)
-filters = (classes + 5) x 3
+`max_batches = (number of classes) * 2000`
+
+`Steps = (max_batches * 0.8), (max_batches * 0.9)`
+
+`filters = (classes + 5) x 3`
+
 
 ##### Train & Test Split
 The dataset is divided into 80% training set and 20% test set.
