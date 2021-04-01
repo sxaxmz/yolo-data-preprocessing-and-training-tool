@@ -139,7 +139,7 @@ The weights can be saved either on the cloud or in darknet backup folder (Weight
 
 
 ### Usage:
-When using/modifying the content or the code of and/or which was introduced thoguht this repository always do give appropriate credit and ask for permission when needed.
+When using/modifying the content of and/or the code which was introduced through this repository always do give appropriate credit and ask for permission.
 
 
 ### References
